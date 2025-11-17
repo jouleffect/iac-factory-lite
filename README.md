@@ -36,6 +36,7 @@ La versione **PRO** (in arrivo) includerà:
 
 ## 📁 Struttura progetto (LITE)
 
+```bash
 iac-factory-lite/
 ├─ iac_factory/
 │ ├─ init.py
@@ -48,7 +49,7 @@ iac-factory-lite/
 │ └─ sample-app.yaml
 ├─ requirements.txt
 └─ README.md
-
+```
 
 ---
 
