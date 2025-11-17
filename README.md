@@ -92,8 +92,11 @@ Output atteso:
 📌 Obiettivi della versione LITE
 
 Mostrare il funzionamento del generatore
+
 Offrire un esempio didattico utilizzabile subito
+
 Permettere di estendere il template con facilità
+
 La versione PRO aggiungerà molte funzionalità per DevOps / Cloud Engineer, mantenendo però un workflow semplice e lineare.
 
 🚧 Versione PRO (coming soon)
@@ -103,23 +106,25 @@ La versione PRO includerà:
 🔧 Output multipli
 
 Terraform
+
 Ansible
+
 Struttura di progetto pronta all’uso
 
 📂 Generazione completa
 
 main.tf, variables.tf, outputs.tf
+
 playbook Ansible + tasks
 
 README generato automaticamente
 
 🧰 Funzionalità aggiuntive
 
-Validazione YAML avanzata
-Modalità bundling (--bundle)
-Template estesi AWS (EC2, VPC, ECS, S3, Lambda)
-Supporto estendibile via plugin
-Se vuoi essere avvisato quando sarà disponibile la versione PRO, potrai trovare info nel repo quando sarà pronta.
+- Validazione YAML avanzata
+- Modalità bundling (--bundle)
+- Template estesi AWS (EC2, VPC, ECS, S3, Lambda)
+- Supporto estendibile via plugin
 
 📄 Licenza
 
@@ -129,8 +134,13 @@ Puoi usarlo liberamente per progetti personali e professionali.
 🤝 Contribuire
 
 Ogni contributo è benvenuto:
+
 nuovi template
+
 fix
+
 miglioramenti CLI
+
 documentazione
+
 Apri una pull request o una issue!
