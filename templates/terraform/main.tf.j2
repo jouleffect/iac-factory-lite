@@ -1,0 +1,26 @@
+terraform {
+    required_version = ">= 1.0.0"
+
+    required_providers {
+        aws = {
+            source = "hashicorp/aws"
+            version = "~> 5.0"
+        }
+    }
+}
+
+provider "aws" {
+    region = "{{ aws_region }}"
+}
+
+resource "aws_instance" "app" {
+  ami           = "{{ ami_id }}"
+  instance_type = "{{ instance_type }}"
+
+  tags = {
+    Name        = "{{ project_name }}"
+{% for key, value in tags.items() %}
+    {{ key }} = "{{ value }}"
+{% endfor %}
+  }
+}

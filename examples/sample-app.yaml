@@ -1,0 +1,8 @@
+# Terraform che crea un’istanza EC2 in AWS
+project-name: sample-app
+aws-region: us-west-2
+instance-type: t2.micro
+ami-id: ami-0abcdef1234567890
+tags:
+  Environment: Development
+  Project: SampleApp
