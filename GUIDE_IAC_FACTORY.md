@@ -7,7 +7,7 @@ per lo sviluppo di IaC Factory (LITE + PRO).
 
 - [x] Creazione repo GitHub `iac-factory-lite`
 - [x] Struttura base progetto
-- [ ] Implementazione versione LITE (solo Terraform)
-- [ ] Test locale
-- [ ] Primo commit e push
-- [ ] Pubblicazione README e guida su GitHub
+- [x] Implementazione versione LITE (solo Terraform)
+- [x] Test locale
+- [x] Primo commit e push
+- [x] Pubblicazione README e guida su GitHub
