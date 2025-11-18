@@ -1,0 +1,24 @@
+cloud: aws
+
+project_name: iac-factory-aws-demo
+aws_region: eu-central-1
+
+tags:
+  environment: dev
+  owner: joule
+  project: iac-factory-lite
+
+ec2:
+  enabled: true
+  instance_type: t3.micro
+  ami_id: ami-1234567890abcdef0
+
+s3:
+  enabled: true
+  bucket_name: iac-factory-demo-bucket
+  versioning: true
+
+vpc:
+  enabled: true
+  vpc_cidr: 10.20.0.0/16
+  public_subnet_cidr: 10.20.1.0/24

@@ -3,42 +3,46 @@ import pathlib
 
 import yaml
 
-from .generator_terraform import render_main_tf
+from .generator_terraform import render_files
 
-def main() -> None: 
-    parser = argparse.ArgumentParser( 
+
+def main() -> None:
+    parser = argparse.ArgumentParser(
         prog="iac-factory-lite",
-        description="Generatore di infrastruttura come codice semplificato per Terraform",
+        description="Legge un file YAML e genera un piccolo progetto Terraform (LITE).",
     )
     parser.add_argument(
         "config",
-        help="Percorso al file di configurazione YAML",
+        help="Percorso al file di configurazione YAML (es: examples/sample-s3.yaml)",
     )
     parser.add_argument(
         "-o",
-        "--output",
+        "--output-dir",
         default="out",
-        help="Directory di output per i file Terraform generati",
+        help="Directory di output per i file Terraform (default: out)",
     )
 
     args = parser.parse_args()
 
     config_path = pathlib.Path(args.config)
-    if not config_path.is_file():
-        print(f"Errore: il file di configurazione '{args.config}' non esiste.")
-        return  
-    with config_path.open("r") as f:
+    if not config_path.exists():
+        raise SystemExit(f"[ERRORE] File YAML non trovato: {config_path}")
+
+    with config_path.open() as f:
         config = yaml.safe_load(f)
-    
-    output_dir = pathlib.Path(args.output)
+
+    output_dir = pathlib.Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    main_tf_content = render_main_tf(config)
+    files = render_files(config)
 
-    output_file = output_dir / "main.tf"
-    output_file.write_text(main_tf_content)
+    for filename, content in files.items():
+        target = output_dir / filename
+        target.write_text(content)
+        print(f"[OK] Generato {target}")
 
-    print(f"File Terraform generato in: {output_file}")
+    print(f"\n[OK] Progetto Terraform LITE generato in: {output_dir}")
+
 
 if __name__ == "__main__":
     main()

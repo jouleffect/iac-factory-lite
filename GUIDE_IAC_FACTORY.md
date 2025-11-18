@@ -13,8 +13,8 @@ per lo sviluppo di IaC Factory (LITE + PRO).
 - [x] Pubblicazione README e guida su GitHub
 - [x] Release con tag v0.1.0 creata
 
-- [ ] Implementazione seconda versione LITE
-- [ ] Test locale
+- [x] Implementazione seconda versione LITE
+- [x] Test locale
+- [x] Modifica README
 - [ ] commit e push
-- [ ] Modifica README
 - [ ] Release con tag v0.1.1 creata

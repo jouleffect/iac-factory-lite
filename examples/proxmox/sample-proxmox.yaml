@@ -1,0 +1,17 @@
+cloud: proxmox
+
+project_name: iac-factory-proxmox-demo
+
+proxmox:
+  endpoint: https://proxmox.example.local:8006/api2/json
+  token_id: root@pam!iac-factory
+  token_secret: super-secret-token
+
+vm:
+  name: iac-factory-demo-vm
+  node: pve1
+  memory_mb: 4096
+  cores: 2
+  disk_gb: 40
+  storage: local-lvm
+  iso_image: local:iso/debian-12.iso

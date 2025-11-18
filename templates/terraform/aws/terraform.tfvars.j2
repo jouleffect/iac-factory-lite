@@ -1,0 +1,25 @@
+project_name = "{{ project_name }}"
+aws_region   = "{{ aws_region }}"
+
+tags = {
+{% for key, value in tags.items() %}
+  {{ key }} = "{{ value }}"
+{% endfor %}
+}
+
+# Feature flags
+enable_vpc = {{ "true" if vpc.enabled else "false" }}
+enable_ec2 = {{ "true" if ec2.enabled else "false" }}
+enable_s3  = {{ "true" if s3.enabled else "false" }}
+
+# VPC
+vpc_cidr           = "{{ vpc.vpc_cidr }}"
+public_subnet_cidr = "{{ vpc.public_subnet_cidr }}"
+
+# EC2
+ec2_instance_type = "{{ ec2.instance_type }}"
+ec2_ami_id        = "{{ ec2.ami_id }}"
+
+# S3
+s3_bucket_name = "{{ s3.bucket_name }}"
+s3_versioning  = {{ "true" if s3.versioning else "false" }}
