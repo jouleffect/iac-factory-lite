@@ -1,0 +1,11 @@
+type: aws_s3_bucket
+
+project_name: demo-s3
+aws_region: eu-central-1
+
+bucket_name: demo-iac-factory-bucket
+versioning: true
+
+tags:
+  environment: dev
+  owner: demo

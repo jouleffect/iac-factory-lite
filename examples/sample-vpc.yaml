@@ -1,0 +1,12 @@
+# Terraform che crea VPC minima in AWS
+type: aws_vpc_minimal
+
+project_name: demo-vpc
+aws_region: eu-central-1
+
+vpc_cidr: 10.0.0.0/16
+public_subnet_cidr: 10.0.1.0/24
+
+tags:
+  environment: dev
+  owner: demo
