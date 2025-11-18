@@ -1,8 +1,8 @@
 # 🏗️ IaC Factory LITE  
 **YAML → Terraform Generator (Versione Gratuita)**
 
-IaC Factory LITE è un piccolo tool da linea di comando che prende un file YAML
-e genera automaticamente un file `main.tf` Terraform basato sui parametri forniti.
+IaC Factory LITE è un tool da linea di comando che prende un file YAML
+e genera automaticamente una struttura di progetto Terraform basata sui parametri forniti.
 
 Questa versione è pensata come **base open-source**, semplice e didattica.
 
