@@ -11,3 +11,5 @@ per lo sviluppo di IaC Factory (LITE + PRO).
 - [x] Test locale
 - [x] Primo commit e push
 - [x] Pubblicazione README e guida su GitHub
+- [x] Release v0.1.0 creata
+
