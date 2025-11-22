@@ -25,9 +25,9 @@ The **PRO** version (coming soon) will include:
 - `outputs.tf`
 - `terraform.tfvars`
 
-✔ Template Jinja2 semplice (estendibile)  
-✔ Comando CLI intuitivo  
-✔ Input YAML semplice
+✔ Simple Jinja2 Template (Extensible)  
+✔ Intuitive CLI command  
+✔ Simple YAML input
 
 AWS example
 ```yaml
