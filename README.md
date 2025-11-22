@@ -1,35 +1,35 @@
 # 🏗️ IaC Factory LITE  
-**YAML → Terraform Generator (Versione Gratuita)**
+**YAML → Terraform Generator (Free Version)**
 
-IaC Factory LITE è un tool da linea di comando che prende un file YAML
-e genera automaticamente una struttura di progetto Terraform basata sui parametri forniti.
+IaC Factory LITE is a command-line tool that takes a YAML file
+and automatically generates a Terraform or Ansible project structure based on the provided parameters.
 
-Questa versione è pensata come **base open-source**, semplice e didattica.
+This version is intended as a simple **open-source base**
 
-La versione **PRO** (in arrivo) includerà:
-- generazione completa **Terraform + Ansible**
-- struttura cartelle auto-generata
-- template Jinja2 avanzati
-- modalità `bundle` (ZIP)
-- validazioni aggiuntive
-- generatori multipli (EC2, VPC, S3, ECS, ecc.)
+The **PRO** version (coming soon) will include:
+- complete **Terraform + Ansible** generation
+- auto-generated folder structure
+- advanced Jinja2 templates
+- bundle mode (ZIP)
+- additional validations
+- multiple generators (EC2, VPC, S3, ECS, etc.)
 
 ---
 
-## Funzionalità (LITE)
+## Features (LITE)
 
-✔ Legge un file YAML  
-✔ Genera automaticamente una struttura di progetto terraform composta da
- - `main.tf`
- - `variables.tf`
- - `outputs.tf`
- - `terraform.tfvars` 
+✔ Reads a YAML file   
+✔ Automatically generates a terraform project structure consisting of   
+- `main.tf`
+- `variables.tf`
+- `outputs.tf`
+- `terraform.tfvars`
 
 ✔ Template Jinja2 semplice (estendibile)  
 ✔ Comando CLI intuitivo  
 ✔ Input YAML semplice
 
-Esempio AWS
+AWS example
 ```yaml
 cloud: aws
 
@@ -56,7 +56,7 @@ vpc:
   public_subnet_cidr: 10.20.1.0/24
 
 ```
-Esempio Proxmox
+Proxmox example
 ```yaml
 cloud: proxmox
 
@@ -77,7 +77,7 @@ vm:
   iso_image: local:iso/debian-12.iso
 ```
 
-Output generato
+Output
 ```bash
 out/
 ├── main.tf
@@ -85,20 +85,20 @@ out/
 ├── outputs.tf
 └── terraform.tfvars
 ```
-Tutti i file .tf usano solo var.*.
-Tutti i valori dinamici vengono generati nel .tfvars.
+All .tf files use only var.*.   
+All dynamic values ​​are generated in .tfvars.
 
 ---
 
-## 📦 Requisiti
+## 📦 Requirements
 
 - Python 3.9+
 - `pip install -r requirements.txt`
-- (opzionale) Terraform installato per validare il file generato
+- (optional) Terraform installed to validate the generated files
 
 ---
 
-## 📁 Struttura progetto (LITE)
+## 📁 Project Structure (LITE)
 
 ```bash
 iac-factory-lite/
@@ -115,31 +115,30 @@ iac-factory-lite/
 │       └── proxmox/
 ├── README.md
 └── LICENSE
-
 ```
 
 ---
 
-### ▶️ Come usarlo
+### ▶️ How to use
 
-1. Clona il repo
+1. Clone the repo
 ```bash
 git clone https://github.com/<tuo-utente>/iac-factory-lite.git
 cd iac-factory-lite
 ```
-2. Installa le dipendenze
+2. Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
-3. Generare tutti i file Terraform:
+3. Generate all Terraform files:
 ```bash
 python -m iac_factory.cli examples/aws-sample.yaml -o out-aws
 ```
-4. Generare solo alcuni file:
+4. Generate only some files:
 ```bash
 python -m iac_factory.cli examples/aws-sample.yaml -o out --main --tfvars
 ```
-5. Flag disponibili:
+5. Flags available:
 ```css
 --main
 --variables
@@ -147,14 +146,14 @@ python -m iac_factory.cli examples/aws-sample.yaml -o out --main --tfvars
 --tfvars
 ```
 
-Output atteso:
+Expected output:
 ```bash
-[OK] Generato out-aws/main.tf
-[OK] Generato out-aws/variables.tf
-[OK] Generato out-aws/outputs.tf
-[OK] Generato out-aws/terraform.tfvars
+[OK] Generated out-aws/main.tf
+[OK] Generated out-aws/variables.tf
+[OK] Generated out-aws/outputs.tf
+[OK] Generated out-aws/terraform.tfvars
 ```
-6. Validazione con Terraform
+6. Validation with Terraform
 ```bash
 cd out-aws
 terraform init
@@ -165,11 +164,11 @@ terraform validate
 | Feature                | LITE              | PRO                 |
 | ---------------------- | ----------------- | ------------------- |
 | YAML → main.tf         | ✔                 | ✔                   |
-| YAML → variables.tf    | ✔ (minimale)      | ✔ (avanzato)        |
-| YAML → outputs.tf      | ✔ (minimale)      | ✔ (completo)        |
-| terraform.tfvars       | ✔  auto           | ✔ con multienv      |
-| Multi-template AWS     | ❌                | ✔ (molti moduli)    |
-| Proxmox support        | ✔ (semplice)      | ✔ (modulo avanzato) |
+| YAML → variables.tf    | ✔ (minimal)       | ✔ (advanced)        |
+| YAML → outputs.tf      | ✔ (minimal)       | ✔ (complete)        |
+| terraform.tfvars       | ✔  auto           | ✔ with multienv     |
+| Multi-template AWS     | ❌                | ✔ (many modules)    |
+| Proxmox support        | ✔ (simple)        | ✔ (advanced) |
 | Ansible output         | ❌                 | ✔                   |
 | Bundle ZIP             | ❌                 | ✔                   |
 | Multi-file per risorsa | ❌                 | ✔                   |
@@ -177,18 +176,18 @@ terraform validate
 | Multi-environment      | ❌                 | ✔                   |
 | Moduli Terraform       | ❌                 | ✔                   |
 | backend remoto         | ❌                 | ✔                   |
-| Documentazione         | minima            | completa            |
+| Documentazione         | minimal            | complete            |
 | Struttura enterprise   | ❌                 | ✔                   |
 
 
 --- 
 
-📜 Licenza
+📜 License
 
-MIT License (consulta il file LICENSE).
+MIT License (see the LICENSE file).
 
 ---
 
-🧑‍💻 Autore
+🧑‍💻 Author
 
 IaC Factory LITE — by Joule (2025)
