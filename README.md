@@ -1,4 +1,6 @@
-# 🏗️ IaC Factory LITE  
+# IaC Factory LITE  ![Static Badge](https://img.shields.io/badge/terraform-blue?logo=terraform&logoColor=white) ![Static Badge](https://img.shields.io/badge/ansible-orange?logo=ansible&logoColor=white)
+
+
 **YAML → Terraform Generator (Free Version)**
 
 IaC Factory LITE is a command-line tool that takes a YAML file
@@ -92,7 +94,7 @@ All dynamic values ​​are generated in .tfvars.
 
 ## 📦 Requirements
 
-- Python 3.9+
+- ![Static Badge](https://img.shields.io/badge/v3.9%2B-blue?logo=python&logoColor=white&label=python)
 - `pip install -r requirements.txt`
 - (optional) Terraform installed to validate the generated files
 
@@ -184,7 +186,8 @@ terraform validate
 
 📜 License
 
-MIT License (see the LICENSE file).
+![Static Badge](https://img.shields.io/badge/MIT-green?label=license&link=https%3A%2F%2Fgithub.com%2Fjouleffect%2Fiac-factory-lite%2Fblob%2Fmain%2FLICENSE)
+
 
 ---
 
