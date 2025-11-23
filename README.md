@@ -186,7 +186,7 @@ terraform validate
 
 📜 License
 
-![Static Badge](https://img.shields.io/badge/MIT-green?label=license&link=https%3A%2F%2Fgithub.com%2Fjouleffect%2Fiac-factory-lite%2Fblob%2Fmain%2FLICENSE)
+[![Repository License](https://img.shields.io/badge/MIT-green?label=license&link=https%3A%2F%2Fgithub.com%2Fjouleffect%2Fiac-factory-lite%2Fblob%2Fmain%2FLICENSE)](https://github.com/jouleffect/iac-factory-lite/blob/main/LICENSE)
 
 
 ---
